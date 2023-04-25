@@ -10,6 +10,10 @@ console.log(process.env.WHOAMI)
   res.send('Hello World')
 })
 
+app.get("/", (req, res)=>{
+  res.sendFile(path.join(__dirname, './deployme_app', "build", 'index.html'))
+})
+
 app.get('/getdata', function (req, res) {
     console.log(process.env.S3_BUCKET)
     console.log(process.env.WHOAMI)
